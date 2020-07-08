@@ -1,0 +1,13 @@
+<h3>Edit Account</h3>
+<form method="post" action="/users/<%=@user.id%>">
+  <input type="hidden" id="hidden" name="_method" value="patch">
+	<input id="username" type="text" name="username" value="<%= @user.username %>"/>
+  <input type="password" name="password" placeholder="Password:" value="<%= @user.password %>">
+  <input type="submit" value="Submit">
+</form>
+
+<!-- Header -->
+<header class="w3-container w3-center" style="padding:128px 16px" id="home">
+
+
+</header>

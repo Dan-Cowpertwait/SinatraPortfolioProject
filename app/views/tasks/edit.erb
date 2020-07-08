@@ -1,0 +1,24 @@
+<!-- Styles -->
+<style>
+.bgimg {
+  background-image: url("/images/background.png");
+}
+</style>
+
+<!-- Header -->
+<header class="w3-container w3-center" style="padding:128px 16px" id="home">
+
+  <h1 class="w3-jumbo">Edit Task</h1><br>
+    <br>
+  <h5>_____________________________________________________________</h5>
+    <br>
+    
+  <form method="post" action="/tasks/<%=@task.id%>" id="edittaskform">
+  <input type="hidden" id="hidden" name="_method" value="patch">
+    <h3>
+      <input id="text" type="text" name="text" value="<%= @task.text %>"/>
+      <button class="btn" type="submit" form="edittaskform"><i class="fa fa-save"></i></button>
+    </h3>
+  </form>
+
+</header>

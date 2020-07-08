@@ -1,0 +1,24 @@
+<style>
+.bgimg {
+  background-image: url("/images/plant_background.png");
+}
+</style>
+
+<!-- Styles -->
+<style>
+.bgimg {
+  background-image: url("/images/background.png");
+}
+</style>
+
+<!-- Header -->
+<header class="w3-container w3-center" style="padding:128px 16px" id="home">
+
+  <h1 class="w3-jumbo"> <%=@quote.text%> </h1><br>
+  <h5><%=@quote.author%></h5>
+  <br>
+  <h2><a href="/quotes/<%=@quote.id%>/save" class=btn><i class="fa fa-save"></i></a></h2>
+  <h5>_____________________________________</h5><br>
+  <img src="images/watering_can.gif">
+
+</header>

@@ -1,0 +1,59 @@
+<% if @days_ago < 2 %>
+  <style>
+    .bgimg {
+      background-image: url("/images/Plant_<%=@plant.health%>.png");
+
+    }
+  </style>
+<!-- Watered -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+
+    <h1 class="w3-jumbo"><b>Hey <%= @user.username %>!</b></h1>
+    <h5>_____________________________________________________________</h5><br>
+
+    <h2 class="w3-text-grey"><%= @plant.name %> the plant is watered and <%=@status%> </h2><br>
+
+<% else %>
+
+<!-- Dried out -->
+<style>
+    .bgimg {
+      background-image: url("/images/Plant_dying_<%=@plant.health%>.png");
+    }
+</style>
+
+<!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+
+    <h1 class="w3-jumbo"><b>Hey <%= @user.username %>!</b></h1>
+    <h5>_____________________________________________________________</h5><br>
+
+    <h2 class="w3-text-grey"><h2 class="w3-text-grey"><%= @plant.name %> the plant needs watering but is still <%=@status%> </h2><br>
+
+<% end %>
+
+
+<!-- Grid tables -->
+<div class="w3-row-padding" style="padding:80px">
+  <!-- <div class="w3-half w3-margin-bottom"> -->
+    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+      <li class="w3-dark-grey w3-xlarge w3-padding-32">Your Tasks</li>
+      <% @tasks.each do |task| %>
+      <li class="w3-large w3-padding-32 w3-light-grey"><%=task.text%>
+
+        <a href="/tasks/<%=task.id%>/complete" class="btn"><br><i class="fa fa-check w3-opacity"></i><a>
+        <a href="/tasks/<%=task.id%>/edit" class="btn"><i class="fa fa-gear w3-opacity"></i><a>
+        <a href="/tasks/<%=task.id%>/delete" class="btn"><i class="fa fa-trash w3-opacity"></i><a>
+
+      </li>
+      <% end %>
+      <li class="w3-light-grey w3-padding-24">
+        <h4 class="w3-text-grey"><a href="/tasks/new" class="btn"><i class="fa fa-plus"></i><a></h4>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</header>

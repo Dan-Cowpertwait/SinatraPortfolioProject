@@ -1,0 +1,25 @@
+<style>
+.bgimg {
+  background-image: url("/images/account.png");
+
+}
+
+</style>
+
+<!-- Header -->
+<header class="w3-container w3-center" style="padding:128px 16px" id="home">
+
+    <h1 class="w3-jumbo"><b>Hey <%= @user.username %>!</b></h1>
+    <h5>_____________________________________________________________</h5><br>
+
+    <h2 class="w3-text-grey">Would you like to make any account changes?</h2><br>
+
+    <hr style="height:50px; visibility:hidden;" />
+
+      <h1 class="w3-text-grey">
+      <a href="/users/<%=@user.id%>/edit" class="w3-button w3-light-grey w3-padding-large w3-section"><i class="fa fa-cog"></i></a>
+      <a href="/users/<%=@user.id%>/delete" class="w3-button w3-light-grey w3-padding-large w3-section"><i class="fa fa-trash"></i></a>
+      </h1>
+
+
+</header>
