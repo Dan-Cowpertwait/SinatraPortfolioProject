@@ -21,8 +21,8 @@ class QuoteController < ApplicationController
 
   get '/quotes/:id/delete' do
     @quote = Quote.find(params[:id])
-    raise @quote.user_id.inspect
-    quote.destroy
+    # raise @quote.user_id.inspect
+    quote.user_id = 0
     redirect 'home'
   end
 

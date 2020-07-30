@@ -19,7 +19,8 @@ class TaskController < ApplicationController
 
   get '/tasks/:id/edit' do
 		@task = Task.find(params[:id])
-		if !logged_in?
+		user = current_user
+		if !logged_in? || @task.user_id != user.id
 			flash.next[:error] = "Gotta log in for that!"
 			redirect "/login"
 		else
